@@ -1,4 +1,4 @@
-# Few Shot Semantic Segmentation Meets SAM3
+# [Few Shot Semantic Segmentation Meets SAM3](https://arxiv.org/abs/2604.05433)
 
 This repository contains the evaluation code for applying the SAM3 (Segment Anything Model 3) to Few-Shot Segmentation (FSS) tasks. We explore the model's few-shot capabilities with a unified canvas using geometric prompts (bounding boxes) and analyze its performance on standard datasets like COCO-20i and PASCAL-5i.
 
