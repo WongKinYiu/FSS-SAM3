@@ -142,6 +142,9 @@ The dataset directory structure should be organized as follows.
 - This project follows the original **SAM License** found in the `LICENSE` file. Our modifications are also open-sourced under the same terms.
 
 
+<br>
+
+
 ## [Update] Few-Shot Object Detection (FSOD)
 
 We additionally evaluate our FSS-SAM3 under the Few-Shot Object Detection (FSOD) setting using the unified support-query collage framework with geometric prompts.
