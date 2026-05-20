@@ -140,3 +140,70 @@ The dataset directory structure should be organized as follows.
 - The core architecture and some utility scripts are based on **[Segment Anything Model 3 (SAM3)](https://github.com/facebookresearch/sam3)**.
 - We thank the Meta AI team for their amazing work.
 - This project follows the original **SAM License** found in the `LICENSE` file. Our modifications are also open-sourced under the same terms.
+
+
+## [Update] Few-Shot Object Detection (FSOD)
+
+We additionally evaluate our FSS-SAM3 under the Few-Shot Object Detection (FSOD) setting using the unified support-query collage framework with geometric prompts.
+
+Our evaluation protocol follows the dataset setup from [FSOD-VFM](https://github.com/Intellindust-AI-Lab/FSOD-VFM), including:
+- PASCAL VOC Few-Shot Detection benchmark
+- COCO Few-Shot Detection benchmark
+
+### FSOD Evaluation
+
+```bash
+# Pascal 1-shot
+python model/fsod_eval.py --dataset pascal --shot 1
+
+# Pascal 5-shot
+python model/fsod_eval.py --dataset pascal --shot 5
+
+# COCO 1-shot
+python model/fsod_eval.py --dataset coco --shot 1
+
+# COCO 5-shot
+python model/fsod_eval.py --dataset coco --shot 5
+```
+
+### PASCAL Few-Shot Detection Results
+
+#### 1-shot
+
+| Split | AP50 | AP |
+|---|---:|---:|
+| split1 | 0.8271 | 0.6916 |
+| split2 | 0.7847 | 0.6421 |
+| split3 | 0.8393 | 0.6934 |
+| **Mean** | **0.8170** | **0.6757** |
+
+#### 5-shot
+
+| Split | AP50 | AP |
+|---|---:|---:|
+| split1 | 0.8949 | 0.7476 |
+| split2 | 0.8775 | 0.7057 |
+| split3 | 0.8988 | 0.7271 |
+| **Mean** | **0.8904** | **0.7268** |
+
+### COCO Few-Shot Detection Results
+
+The original FSOD-VFM COCO benchmark provides fixed support protocols for:
+- 10-shot
+- 30-shot
+
+Since our canvas-based prompting framework currently supports up to five support images within a single collage layout, we evaluate the 1-shot and 5-shot settings instead of the original 10-shot and 30-shot configurations.
+
+| Setting | AP | AP50 |
+|---|---:|---:|
+| COCO 1-shot | 0.3049 | 0.3818 |
+| COCO 5-shot | 0.3382 | 0.4287 |
+
+### Dataset Setup
+
+Please follow the dataset structure and benchmark protocol from [FSOD-VFM](https://github.com/Intellindust-AI-Lab/FSOD-VFM).
+
+The repository includes:
+- Pascal VOC episodic split JSON files
+- COCO fixed-support JSON files
+- Unified evaluation scripts for Pascal and COCO benchmarks
