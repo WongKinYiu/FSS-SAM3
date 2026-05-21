@@ -197,10 +197,10 @@ The original FSOD-VFM COCO benchmark provides fixed support protocols for:
 
 Since our canvas-based prompting framework currently supports up to five support images within a single collage layout, we evaluate the 1-shot and 5-shot settings instead of the original 10-shot and 30-shot configurations.
 
-| Setting | AP | AP50 |
-|---|---:|---:|
-| COCO 1-shot | 0.3049 | 0.3818 |
-| COCO 5-shot | 0.3382 | 0.4287 |
+| Setting | AP | AP50 | AP75 |
+|---|---:|---:|---:|
+| COCO 1-shot| 0.3049 | 0.3818 | 0.3350 |
+| COCO 5-shot | 0.3382 | 0.4287 | 0.3720 |
 
 ### Dataset Setup
 
